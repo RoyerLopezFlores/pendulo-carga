@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="inicio.js"></script>
+    <script src="controles.js"></script>
+  </head>
+  <body onload="dibujarCanvas();">
+    <div class="principal">
+      <div class="dibujo_izq">
+        <canvas id="canvas" width="800" height="700">Go get chrome!!</canvas>
+      </div>
+      <div class="formulario_der">
+        <div class="variables_atr">
+          <div class="carga_f">
+            <label for="txtcarga_masa">Masa</label>
+            <label for="txtcarga">Carga</label>
+          </div>
+          <div class="otros_f">
+            <label for="cuerda">Longitud</label><br>
+            <label for="Voltaje">Voltaje</label><br>
+            <label for="Distancia">Distancia</label>
+          </div>
+        </div>
+        <div class="rangos_atr">
+          <div class="carga_f1">
+            <input type="range" id="rgnMasa" min="0.1" max="10" value="1" onchange="actualizarValores();">
+            <input type="range" id="rgnCarga" min = "0.1" max ="10" step="0.1" value="6" onchange="actualizarValores();">
+
+          </div>
+          <div class="otros_f1">
+            <input type="range" id="rgncuerda" min="0.1" max="5.5" step="0.1" value="2" onchange="actualizarValores();">
+            <input type="range"  id="rgnVoltaje" min="0" max="10" step="0.2" value="4" onchange="actualizarValores();">
+            <input type="range" id="rgnDistancia" min="1" max="6" value="1" onchange="actualizarValores();">
+          </div>
+        </div>
+        <div class="valores_atr">
+          <div class="carga_f2">
+            <input type="text" id="txtMasa" value="1">
+            <input type="text" id="txtCarga" value="6">
+
+          </div>
+          <div class="otros_f2">
+            <input type="text" id="txtCuerda" value="2">
+            <input type="text" id="txtVoltaje" value="4">
+            <input type="text" id="txtDistancia" value="1">
+          </div>
+          <div class="medida_atr">
+            <div class="carga_f">
+              <label for="txtcarga_masa">mg</label>
+              <label for="txtcarga">µC</label>
+            </div>
+            <div class="otros_f">
+              <label for="cuerda">m</label><br>
+              <label for="Voltaje">V</label><br>
+              <label for="Distancia">m</label>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+
+</html>
