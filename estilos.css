@@ -1,0 +1,42 @@
+body{
+  background-color: #81F364;
+}
+
+.principal{
+  background-color: green;
+
+  width:100%;
+
+
+}
+
+.dibujo_izq{
+
+  float: left;
+
+
+}
+.formulario_der{
+  background-color: white;
+
+  float: left;
+
+}
+.frmVoltaje{
+  border: 2px solid black;
+}
+.frmDistancia{
+  border: 2px solid black;
+}
+.frmCuerda{
+  border: 2px solid black;
+}
+.frmCuerda{
+  border: 2px solid black;
+}
+.frmCarga{
+  border:  2px solid black;
+}
+.frmMasa{
+  border:  2px solid black;
+}

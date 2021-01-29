@@ -11,6 +11,7 @@ var angulo = Math.ceil((voltaje*carga/distanciaplacas)*(largocuerda/(masa*9.81))
 var limsup = d/2+angulo;
 var liminf = d/2-angulo;
 var posible=true;
+var radio = 10;
 function actualizarValores(){
     distanciaplacas = document.getElementById('rgnDistancia').value;
     largocuerda = document.getElementById('rgncuerda').value;
@@ -25,13 +26,14 @@ function actualizarValores(){
     posible=true;
     d=distanciaplacas*100;
     posx = distanciaplacas*50;
+
     largocuerda*=100;
     angulo = Math.ceil((voltaje*carga/distanciaplacas)*(largocuerda/(masa*9.81))*(1/10));
 
     limsup = d/2+angulo;
     liminf = d/2-angulo;
     flag=true;
-    if(limsup >d) alerta('(Angulo demasiado grande)');
+    if(limsup+15>d) alerta('(Angulo demasiado grande)');
     if(limsup-d/2<2)alerta('(Angulo demasiado pequeño)');
 
 }
@@ -79,7 +81,12 @@ function alerta(mensaje){
     graficarcuerda(x0+d/2,y0,h,x0+posx);
     setTimeout("dibujarCanvas()",50);
 };
-
+function dibujarcarga(x,y,r){
+  c.beginPath();
+  c.fillStyle = 'black';
+  c.arc(x,y,r,0,2*Math.PI);
+  c.fill();
+}
 function graficarcuerda(x,y,h,x1){
   var y1;
   y1=Math.ceil(Math.sqrt(Math.abs(largocuerda*largocuerda-(x1-x)*(x1-x))));
@@ -91,6 +98,8 @@ function graficarcuerda(x,y,h,x1){
   c.moveTo(x,y-h);
   c.lineTo(x1,y-h+y1);
   c.stroke();
+  dibujarcarga(x1,y-h+y1,radio);
+
 
 }
 function graficarplacas(x,y,x1,y1,color){
