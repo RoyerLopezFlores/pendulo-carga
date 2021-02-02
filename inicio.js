@@ -78,9 +78,30 @@ function alerta(mensaje){
       if(posx == liminf) flag=true;
     }
   }
+
     graficarcuerda(x0+d/2,y0,h,x0+posx);
+    intervalosX(large,x0,y0,sep);
+    intervalosY(large,x0,y0,sep);
     setTimeout("dibujarCanvas()",50);
 };
+function intervalosY(alto,x,y,it){
+  c.fillStyle= 'black';
+  c.font = 'bold 20px Helvetica';
+  tamy=alto/(it*4);
+  for(var j=1;j<tamx;j++){
+    c.fillText(j,x-20,y+10-it*4*j);
+  }
+  c.fillText("m",x-23,y+10-it*4*(tamy-2)-it);
+}
+function intervalosX(ancho,x,y,it){
+  c.fillStyle= 'black';
+  c.font = 'bold 20px Helvetica';
+  tamx=ancho/(it*4);
+  for(var j=0;j<tamx;j++){
+    c.fillText(j,x-15+it*j*4,y+20);
+  }
+  c.fillText("m",x-10+it*(tamx-1)*4+it,y+20);
+}
 function dibujarcarga(x,y,r){
   c.beginPath();
   c.fillStyle = 'black';
