@@ -7,7 +7,7 @@ var carga=6;
 var flag=true;
 var d=distanciaplacas*100;
 var posx=d/2;
-var angulo = Math.ceil((voltaje*carga/distanciaplacas)*(largocuerda/(masa*9.81))*(1/10));
+var angulo = Math.ceil((voltaje*carga/distanciaplacas)*(largocuerda/(masa*9.81))*(1/10)*1/4);
 var limsup = d/2+angulo;
 var liminf = d/2-angulo;
 var posible=true;
@@ -28,7 +28,7 @@ function actualizarValores(){
     posx = distanciaplacas*50;
 
     largocuerda*=100;
-    angulo = Math.ceil((voltaje*carga/distanciaplacas)*(largocuerda/(masa*9.81))*(1/10));
+    angulo = Math.ceil((voltaje*carga/distanciaplacas)*(largocuerda/(masa*9.81))*(1/10)*1/4);
 
     limsup = d/2+angulo;
     liminf = d/2-angulo;
